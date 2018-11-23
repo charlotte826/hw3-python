@@ -65,12 +65,12 @@ with open(csvpath, newline="") as csvfile:
     net_profit_list.remove('Profit/Losses') #Remove the header (approach #2)
     #Convert list elements into integers so we can sum(net_profit_list)
     net_profit_list = [int(rows) for rows in net_profit_list]
+    #print(net_profit_list[0:9])
     #Create variable to house sum(net_profit_list)
     total_net_value = str(sum(net_profit_list))
     Total_Net = (f"Total: ${total_net_value}")
 #5a. Print (Total: $38382578)
     print(Total_Net)
-
 
         # Second approach that successfully calculates sum(net_profit_list)
 
@@ -87,7 +87,7 @@ with open(csvpath, newline="") as csvfile:
     1. Create a formula to find the change in Profit/Losses between each month over the entire period
     2. To find the change between each month, I will want to:
      2a. subtract the first element (first month profit/loss) in the list from the second element (second month profit/loss)
-     2b. subtract the second element from the third element 
+     2b. subtract the second element from the third element
      2c. and so forth, continuing this pattern, iterating over the entire list of net_profit_list
      2a-c: Visually, I'm thinking this will look something like: [(2ndElement=2ndMonthValue=y)-(1stElement=1stMonthValue=x)]
      2d. Then I want to store all the Profit/Losses between months in a new variable list (I'll call this list "res" for fun)
@@ -100,6 +100,9 @@ with open(csvpath, newline="") as csvfile:
     """
     #Approach 1, 2a-d Formula
     res = [y - x for x, y in zip(net_profit_list, net_profit_list[1:])]
+        #print(net_profit_list)
+        #print(net_profit_list[1:])
+        #print(res)
     #Approach 3a-c
     import statistics
     #Approach 4
