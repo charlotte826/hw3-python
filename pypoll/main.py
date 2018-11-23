@@ -31,7 +31,7 @@ Winner: Khan
 
 csvpath = os.path.join("election_data.csv")
 
-Election_Results = ("Election Results")
+Election_Results = str("Election Results")
 print(Election_Results)
 #Create a variable to hold the divider
 Break_Lines = str("--------------------------")
@@ -103,12 +103,26 @@ with open(csvpath, newline="") as csvfile:
          #print(d)
 #Variable = each candidate with corresponding percentage vote in descending order
     cand_order_percentage = list([(i, c[i], (c[i] / len(Candidates_List) * 100.0)) for i, count in c.most_common()])
-    #original:     cand_order_percentage = list([(i, c[i] / len(Candidates_List) * 100.0) for i, count in c.most_common()])
-    #print(cand_order_percentage)
-    for x,y,z in cand_order_percentage:
-        #print(f"{x}: {format(z,'.3f')}% ({y})")
-        Election_Votes_Text = (f"{x}: {format(z,'.3f')}% ({y})")
-        print(Election_Votes_Text)
+          #original:     cand_order_percentage = list([(i, c[i] / len(Candidates_List) * 100.0) for i, count in c.most_common()])
+          #print(cand_order_percentage)
+    #for x,y,z in cand_order_percentage:
+              #print(f"{x}: {format(z,'.3f')}% ({y})")
+        #Election_Votes_Text = (f"{x}: {format(z,'.3f')}% ({y})")
+        #print(Election_Votes_Text)
+    Election_Votes_Text_2 = [(f"{x}: {format(z,'.3f')}% ({y})") for x,y,z in cand_order_percentage]
+    #print(Election_Votes_Text_2)
+    #print(Election_Votes_Text_2[0])
+    Election_Votes_Text_Khan1 = str(Election_Votes_Text_2[0])
+    print(Election_Votes_Text_Khan1)
+    #print(Election_Votes_Text_2[1])
+    Election_Votes_Text_Correy2 = str(Election_Votes_Text_2[1])
+    print(Election_Votes_Text_Correy2)
+    #print(Election_Votes_Text_2[2])
+    Election_Votes_Text_Li3 = str(Election_Votes_Text_2[2])
+    print(Election_Votes_Text_Li3)
+    #print(Election_Votes_Text_2[3])
+    Election_Votes_Text_OTooley4 = str(Election_Votes_Text_2[3])
+    print(Election_Votes_Text_OTooley4)
     #print(c["Khan"]) - works bc  c= dictionary
     #print(cand_order_percentage["Khan"]) doesn't work because c_o_p = list
 
@@ -120,21 +134,34 @@ with open(csvpath, newline="") as csvfile:
     print(Winner_Candidate_Text)
     print(Break_Lines)
 
-
-
-    print("I left off wondering how to get the information in the results to exoprt into a text file...")
-
-
-
-
 print()
 #Instruction: your final script should both print the analysis to the terminal and export a text file with the results.
 #I ask the user if they'd like to create and export a text file of the results, just to be nice and polite and stuff.
 Output_Text = input("Would you like to export a text file of the results? If yes, type 'y':")
 if Output_Text == 'y':
     f = open('pythonhw1_pypoll_results_2018.txt','w')
-    f = open('pythonhw1_pypoll_results_2018.txt','w')
-    f.write(Election_Votes_Text)
+    f.write(Election_Results
+            + "\n" +
+            Break_Lines
+            + "\n" +
+            Total_Votes_Text
+            + "\n" +
+            Break_Lines
+            + "\n" +
+            Election_Votes_Text_Khan1
+            + "\n" +
+            Election_Votes_Text_Correy2
+            + "\n" +
+            Election_Votes_Text_Li3
+            + "\n" +
+            Election_Votes_Text_OTooley4
+            + "\n" +
+            Break_Lines
+            + "\n" +
+            Winner_Candidate_Text
+            + "\n" +
+            Break_Lines
+            )
     f.close()
 else:
     print("Okay, a text file of the results will not be exported :)")
