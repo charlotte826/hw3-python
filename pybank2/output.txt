@@ -1,4 +1,0 @@
-Would you like export a text file of these results? (y/)
-Would you like export a text file of these results? (y/n)
-Would you like export a text file of these results? (y/n)
-I have a question.
