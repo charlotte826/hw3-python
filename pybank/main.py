@@ -166,6 +166,7 @@ print()
     #I ask the user if they'd like to create and export a text file of the results, just to be nice and polite and stuff.
 Output_Text = input("Would you like to export a text file of the results? If yes, type 'y':")
 if Output_Text == 'y':
+    print("Okay, a text file of the results has been exported as 'pythonhw1-pybank-results-2018.txt'")
     f = open('pythonhw1-pybank-results-2018.txt','w')
     f.write(Financial_Analysis +  "\n" +
             Break_Lines +  "\n" +
@@ -177,4 +178,4 @@ if Output_Text == 'y':
             )
     f.close()
 else:
-    print("Okay, a text file of the results will not be exported :)")
+    print("Okay, a text file of the results will *not* be exported :)")

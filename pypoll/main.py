@@ -142,6 +142,7 @@ print()
     #I ask the user if they'd like to create and export a text file of the results.
 Output_Text = input("Would you like to export a text file of the results? If yes, type 'y':")
 if Output_Text == 'y':
+    print("Okay, a text file of the results has been exported as 'pythonhw1_pypoll_results_2018.txt'")
     f = open('pythonhw1_pypoll_results_2018.txt','w')
     f.write(Election_Results
             + "\n" +
@@ -167,4 +168,4 @@ if Output_Text == 'y':
             )
     f.close()
 else:
-    print("Okay, a text file of the results will not be exported :)")
+    print("Okay, a text file of the results will *not* be exported :)")
