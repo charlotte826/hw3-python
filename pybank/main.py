@@ -41,6 +41,8 @@ with open(csvpath, newline="") as csvfile:
         net_profit_plus_month.append(rows[0:1])
     net_profit_plus_month.pop(0)
     net_profit_plus_month_n = [i[0] for i in net_profit_plus_month]
+    #print(net_profit_plus_month)
+    #print(net_profit_plus_month_n)
 
 with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")

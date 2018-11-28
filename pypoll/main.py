@@ -15,7 +15,7 @@ with open(csvpath, newline="") as csvfile:
     dict_result = {}
     for row in csvreader:
         key = row[0]
-        dict_result[key] = row[2:]
+        dict_result[key] = row[2:] #key of dictionary = candidate as in {candidate: __value__}
 
 Total_Votes = len(set(dict_result))
 Total_Votes_Text = str(f"Total Votes: {Total_Votes}")
